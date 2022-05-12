@@ -39,9 +39,9 @@ success(){
     green "===================================================="
     green " Installation of pingtunnel has succedded"
     green " You may wish to control pingtunnel via systemctl:"
-    green " stop:       systemctl stop proxypool"
-    green " start:      systemctl start proxypool"
-    green " restart:    systemctl start proxypool"
+    green " stop:       systemctl stop pingtunnel"
+    green " start:      systemctl start pingtunnel"
+    green " restart:    systemctl restart pingtunnel"
     echo "  Blog: https://daycat.space"
     green "===================================================="
 }
@@ -91,7 +91,7 @@ download_pt(){
     Restart=always
     RestartSec=1
     User=root
-    ExecStart=/usr/bin/proxypool -type server
+    ExecStart=/usr/bin/pingtunnel -type server
     Restart=on-failure
 
     [Install]
